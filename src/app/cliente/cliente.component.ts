@@ -7,7 +7,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-cliente',
   templateUrl: './cliente.component.html',
-  styleUrl: './cliente.component.css'
+  styleUrls: ['./cliente.component.css']
 })
 export class ClienteComponent {
   clientes: Cliente[] = [];
@@ -18,11 +18,20 @@ export class ClienteComponent {
       id:[''],
       nome:[''],
       descricao:['']
-
     });
   }
 
-  save(){
+  save() {
     this.clientes.push(this.clienteFormGroup.value);
   }
+
+  edit(index: number) {
+    // Implemente a lógica para editar o item na posição 'index'
+  }
+
+  delete(index: number) {
+    this.clientes.splice(index, 1);
+  }
 }
+
+
